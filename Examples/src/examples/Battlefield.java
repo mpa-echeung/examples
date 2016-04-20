@@ -11,8 +11,8 @@ class Battlefield {
         while( poke1.getHP()>0 && poke2.getHP()>0 ) {
             int damage1to2, damage2to1;
             
-            damage1to2 = (int) Math.ceil((double) (poke1.getAttack()*3 / poke2.getDefense()))*poke1.getAttack();
-            damage2to1 = (int) Math.ceil((double) (poke2.getAttack()*3 / poke1.getDefense()))*poke2.getAttack();
+            damage1to2 = calculateDamage(poke1, poke2);
+            damage2to1 = calculateDamage(poke2, poke1);
             
             System.out.println("Pokemon 1 deals: " + damage1to2 );
             System.out.println("Pokemon 2 deals: " + damage2to1 );
@@ -29,4 +29,9 @@ class Battlefield {
             System.out.println("Poke2 wins!");
         }
     }
+    
+    public int calculateDamage(Pokemon poke1, Pokemon poke2){
+        return (int) Math.ceil((double) (poke1.getAttack()*3 / poke2.getDefense()))*poke1.getAttack();
+    }
+    
 }
