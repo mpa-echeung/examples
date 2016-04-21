@@ -3,16 +3,19 @@ package examples;
 import java.util.Random;
 
 abstract class Pokemon {
-    private int attack, defense, HP;
+    private int attack, defense, HP, speed;
     private int level;
     private String type;
     protected String name;
 
-   
     public int getAttack() {
         return attack;
     }
 
+    public int getSpeed() {
+        return speed;
+    }
+    
     public int getDefense() {
         return defense;
     }
@@ -26,9 +29,9 @@ abstract class Pokemon {
         this.defense = defense;
         this.level = level;
         this.type = type;
+        this.speed = level;
         this.HP = level + (defense * defense);
     }
-   
    
     public String damageType(){
         Random RNG = new Random();
@@ -54,4 +57,12 @@ abstract class Pokemon {
         return this.HP;
     }
    
+    public boolean checkValid(){
+        if ((attack > level) && (defense > level) && (HP > level)){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
