@@ -9,6 +9,8 @@ class Battlefield {
             System.out.println("Pokemon 1 now has: " + poke1.getHP());
             System.out.println("Pokemon 2 now has: " + poke2.getHP());
 
+            //This is a comment
+            
             while( poke1.getHP()>0 && poke2.getHP()>0 ) {
                 if (poke1.getSpeed() > poke2.getSpeed()){
                     attack1(poke1, poke2);
