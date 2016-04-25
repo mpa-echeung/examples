@@ -16,6 +16,7 @@ abstract class Pokemon {
         return speed;
     }
     
+    
     public int getDefense() {
         return defense;
     }
